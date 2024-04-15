@@ -63,7 +63,7 @@ def get_pie_chart(entered_site):
     if entered_site == 'ALL':
         fig = px.pie(filtered_df, values='class', 
         names='Launch Site', 
-        title='Total Success Launchs by Site')
+        title='Total Success Launches by Site')
         return fig
     else:
         # return the outcomes piechart for a selected site
@@ -82,10 +82,10 @@ def scatter(entered_site,payload):
     # thought reusing filtered_df may cause issues, but tried it out of curiosity and it seems to be working fine
     
     if entered_site=='ALL':
-        fig=px.scatter(filtered_df,x='Payload Mass (kg)',y='class',color='Booster Version Category',title='Correction between Payload and Sucsess for all Sites')
+        fig=px.scatter(filtered_df,x='Payload Mass (kg)',y='class',color='Booster Version Category',title='Correction between Payload and Success for all Sites')
         return fig
     else:
-        fig=px.scatter(filtered_df[filtered_df['Launch Site']==entered_site],x='Payload Mass (kg)',y='class',color='Booster Version Category',title=f"Correction between Payload and Sucsess for site {entered_site}")
+        fig=px.scatter(filtered_df[filtered_df['Launch Site']==entered_site],x='Payload Mass (kg)',y='class',color='Booster Version Category',title=f"Correction between Payload and Success for site {entered_site}")
         return fig
 
 # Run the app
